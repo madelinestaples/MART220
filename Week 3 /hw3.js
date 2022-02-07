@@ -1,3 +1,7 @@
+//timer function 
+var timernumber = 22;
+var startButton;
+
 //variables that move light pink circle
 var x = 300;
 var movement =13;
@@ -9,7 +13,7 @@ var y = 400;
 var xr = 400
 
 //image powerpuff girls 
-var img,img2 ;
+var img,img2,img3 ;
 var robotomono
 
 
@@ -22,37 +26,61 @@ function preload() {
   img2=loadImage (
     'buttercup.jpg'
   )
+  img3=loadImage(
+    'blossum.jpeg'
+  )
+  
+  
   robotomono=loadFont (
     'RobotoMono-VariableFont_wght.ttf'
   )
 }
 
-
-
-
-
-
-
 function setup() {
     createCanvas(800,900);
+    textAlign(LEFT);
+  setInterval(timeIt, 1000);
   }
   
   function draw() {
   background(0);
-  //image powerpuff girls 
+  if (timerValue >= 10) {
+    text("0:" + timerValue, width / 2, height / 2);
+  }
+  if (timerValue < 10) {
+    text('0:0' + timerValue, width / 2, height / 2);
+  }
+  if (timerValue == 0) {
+    text('game over', width / 2, height / 2 + 15);
+  }
+}
+
+function timeIt() {
+  if (timerValue > 0) {
+    timerValue--;
+  }
+}
+{
+
+//image powerpuff girls 
   image (
     img,20, 40
   );
   image (
     img2,400, 70
   );
+  image (
+    img3, 300, 400
+  );
+  
+  
 
 
 textFont(robotomono);
   //title in top left hand corner 
   text('Euphoria', 10, 30);
   //name in bottom right hand corner
-  text('Madeline Staples',700,875);
+  text('Madeline Staples',670,880);
 // hot pink circle
 fill(255,54,151)
 circle(700,100,80);
@@ -92,12 +120,7 @@ circle(600,800,200)
     movement2*=-1;
   }
   xr+=movement2
-
-
-
-
-
-
+  
  //light pink circle
   fill('#fae');
   //light pink circle Movement
