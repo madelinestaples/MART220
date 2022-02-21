@@ -15,6 +15,10 @@ var xr = 400
 //image powerpuff girls 
 var img,img2,img3 ;
 var robotomono
+
+//animation sprite variables
+var asimg 
+
 //circle array! Using x value Circles that are stationary
 var myArray = [];
 myArray[0] = 350;
@@ -27,20 +31,22 @@ myArray[6]=460;
 
 //move our character {pink square}
 var cx = 100;
-
-
-
+var myimage;
+var staticimages = []
+var filenames; 
 function preload() {
-  img=loadImage (
-    'powerpuffgirls.jpeg'
-
+  filenames = loadStrings(
+    'staticimagefile.txt'
   )
+  
+  
   img2=loadImage (
     'buttercup.jpg'
   )
   img3=loadImage(
     'blossum.jpeg'
   )
+ asimg = loadImage("./animation/Dead (1).png");
   
   
   robotomono=loadFont (
@@ -49,6 +55,14 @@ function preload() {
 }
 
 function setup() {
+  img=loadImage (
+    filenames[1]
+
+  )
+  myimage=new imageclass (
+    img, 20, 40, 200, 200
+  )
+  staticimages[0]=myimage
     createCanvas(800,900);
     //timer
     textAlign(LEFT);
@@ -57,6 +71,8 @@ function setup() {
   
   function draw() {
   background(0);
+  //animation
+  image(asimg, 100,100, 335,235)
   //character movement down arrow
   if(keyIsDown(40))
   {
@@ -75,6 +91,7 @@ if(keyIsDown(38))
 
 
   //timer stuff
+
   if (timernumber >= 10) {
     text("0:" + timernumber, width / 2, height / 2);
   }
@@ -84,13 +101,16 @@ if(keyIsDown(38))
   if (timernumber == 0) {
     text('game over', width / 2, height / 2 + 15);
   }
-
+ 
 
 
 
 //image powerpuff girls 
   image (
-    img,20, 40
+    staticimages[0].getImage()
+      ,staticimages[0].getX(),staticimages[0].getY(),staticimages[0].getW(), staticimages[0].getH()
+      
+    
   );
   image (
     img2,400, 70
