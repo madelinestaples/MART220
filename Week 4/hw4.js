@@ -18,6 +18,9 @@ var robotomono
 
 //animation sprite variables
 var asimg 
+//animation array 
+var animation = [];
+var k = 0;
 
 //circle array! Using x value Circles that are stationary
 var myArray = [];
@@ -46,7 +49,8 @@ function preload() {
   img3=loadImage(
     'blossum.jpeg'
   )
- asimg = loadImage("./animation/Dead (1).png");
+ // asimg = loadImage("../animation/Dead (1).png");
+ //animation[0]=asimg;
   
   
   robotomono=loadFont (
@@ -72,7 +76,7 @@ function setup() {
   function draw() {
   background(0);
   //animation
-  image(asimg, 100,100, 335,235)
+  //image(animation[k], 100,100, 335,235)
   //character movement down arrow
   if(keyIsDown(40))
   {
@@ -101,6 +105,10 @@ if(keyIsDown(38))
   if (timernumber == 0) {
     text('game over', width / 2, height / 2 + 15);
   }
+  {
+   
+  }
+
  
 
 
@@ -186,5 +194,10 @@ circle(myArray[5],800,200)
       timernumber--;
     }
     myArray[0]+=25;
+    k++;
+    if (k >= animation.length)
+{
+  k= 0;
+}
   }
   
