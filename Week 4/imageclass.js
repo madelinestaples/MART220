@@ -35,3 +35,4 @@ class imageclass
         this.x += speed;
     }
 }
+

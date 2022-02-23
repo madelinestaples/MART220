@@ -1,4 +1,4 @@
-animationfile
+
 Dead (1).png
 Dead (2).png
 Dead (3).png

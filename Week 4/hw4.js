@@ -49,11 +49,26 @@ function preload() {
   img3=loadImage(
     'blossum.jpeg'
   )
- // asimg = loadImage("../animation/Dead (1).png");
- //animation[0]=asimg;
-  
-  
-  robotomono=loadFont (
+ asimg = loadImage("./animation/Dead (1).png");
+ animation[0]=asimg;
+asimg = loadImage("./animation/Dead (2).png");
+animation[1]=asimg;
+asimg = loadImage("./animation/Dead (3).png");
+animation[2]=asimg;
+asimg = loadImage("./animation/Dead (4).png");
+animation[3]=asimg;
+asimg = loadImage("./animation/Dead (5).png");
+animation[4]=asimg;
+asimg = loadImage("./animation/Dead (6).png");
+animation[5]=asimg;
+asimg = loadImage("./animation/Dead (7).png");
+animation[6]=asimg;
+asimg = loadImage("./animation/Dead (8).png");
+animation[7]=asimg;
+asimg = loadImage("./animation/Dead (9).png");
+animation[8]=asimg;
+
+robotomono=loadFont (
     'RobotoMono-VariableFont_wght.ttf'
   )
 }
@@ -76,7 +91,7 @@ function setup() {
   function draw() {
   background(0);
   //animation
-  //image(animation[k], 100,100, 335,235)
+  image(animation[k], 100,100, 335,235)
   //character movement down arrow
   if(keyIsDown(40))
   {
