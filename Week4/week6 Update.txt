@@ -1,0 +1,6 @@
+week6 Update.txt
+For my code, a big change I added this week was that I also included my animations to run in my image class. B
+Beforehand, I only had my static images in my image class and now I have both. 
+This gives me the ability to change certian elements of my static images and animations with ease. 
+My static images are in an array as well which also allows for easy adjustments. 
+I resized and moved my animation so that it was more visible. 

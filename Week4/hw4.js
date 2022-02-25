@@ -49,24 +49,51 @@ function preload() {
   img3=loadImage(
     'blossum.jpeg'
   )
- asimg = loadImage("./animation/Dead (1).png");
- animation[0]=asimg;
-asimg = loadImage("./animation/Dead (2).png");
-animation[1]=asimg;
-asimg = loadImage("./animation/Dead (3).png");
-animation[2]=asimg;
-asimg = loadImage("./animation/Dead (4).png");
-animation[3]=asimg;
-asimg = loadImage("./animation/Dead (5).png");
-animation[4]=asimg;
-asimg = loadImage("./animation/Dead (6).png");
-animation[5]=asimg;
-asimg = loadImage("./animation/Dead (7).png");
-animation[6]=asimg;
-asimg = loadImage("./animation/Dead (8).png");
-animation[7]=asimg;
-asimg = loadImage("./animation/Dead (9).png");
-animation[8]=asimg;
+ asimg = loadImage("Dead (1).png");
+ var power = new imageclass (
+   asimg, 6, 10, 669, 569
+ )
+ animation[0]=power;
+asimg = loadImage("Dead (2).png");
+ power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[1]=power;
+asimg = loadImage("Dead (3).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[2]=power;
+asimg = loadImage("Dead (4).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[3]=power;
+asimg = loadImage("Dead (5).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[4]=power;
+asimg = loadImage("Dead (6).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[5]=power;
+asimg = loadImage("Dead (7).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[6]=power;
+asimg = loadImage("Dead (8).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[7]=power;
+asimg = loadImage("Dead (9).png");
+power = new imageclass (
+  asimg, 6, 10, 669, 569
+)
+animation[8]=power;
 
 robotomono=loadFont (
     'RobotoMono-VariableFont_wght.ttf'
@@ -91,7 +118,9 @@ function setup() {
   function draw() {
   background(0);
   //animation
-  image(animation[k], 100,100, 335,235)
+  image(animation[k].getImage(
+
+  ), animation[k].getX(),animation[k].getY(), animation[k].getW(),animation[k].getH())
   //character movement down arrow
   if(keyIsDown(40))
   {
@@ -160,7 +189,7 @@ circle(myArray[0],100,80);
 //border circles, non moving for decoration 
 //light purple
 fill(214, 158, 222)
-circle(myArray[1],300,200);
+circle(myArray[4],330,200);
 //dark purple
 fill(174, 0, 255)
 circle(myArray[2],600,300);
